@@ -1,0 +1,30 @@
+
+server:
+  port: 8090
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: ignite caching layer server
+    profiles:
+    active:
+      default
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: update
+    database-platform:  org.hibernate.dialect.PostgreSQL9Dialect
+  datasource:
+    url:  jdbc:postgresql://3.120.36.173:5432/dfm_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+# Logger configuration
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: INFO
+    org.hibernate: DEBUG
